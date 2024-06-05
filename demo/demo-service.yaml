@@ -36,7 +36,20 @@ spec:
           - containerPort: 8086
         livenessProbe:
           httpGet:
-            path: /health
+            path: /actuator/health
             port: 8086
           initialDelaySeconds: 30
           timeoutSeconds: 1
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8086
+          initialDelaySeconds: 30
+          periodSeconds: 10  
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m" 
