@@ -8,7 +8,7 @@ public class AppRestController {
 	
 	@GetMapping("/message")
 	public String getMessage() {
-		return "WELCOME";
+		return "WELCOME TO KUBERNETES";
 	}
 
 }
