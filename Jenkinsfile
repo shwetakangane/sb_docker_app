@@ -26,10 +26,15 @@ pipeline{
             }
         }
         stage('PUBLISH TO NEXUS'){
+        
             steps{
-                withMaven(globalMavenSettingsConfig: 'global-settings', jdk: 'jdk', maven: 'M3', mavenSettingsConfig: '', traceability: true) {
-                  sh 'mvn deploy'
-                }
+                script{
+                    dir('/Users/shwetakangane/.jenkins/workspace/KubernetesDemo/FirstDemoApp/demo'){
+                       withMaven(globalMavenSettingsConfig: 'global-settings', jdk: 'jdk', maven: 'M3', mavenSettingsConfig: '', traceability: true) {
+                          sh 'mvn deploy'
+                       }
+                    }
+                }  
             }
         }
         
