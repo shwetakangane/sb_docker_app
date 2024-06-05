@@ -54,6 +54,7 @@ pipeline{
                             sh 'kubectl delete deployment firstdemoapp'
                             sleep(time: 10, unit: 'SECONDS')
                             sh 'kubectl apply -f demo-service.yaml'
+                            sh 'minikube svc firstdemoapp'
                         }
                     }
                 }
