@@ -49,6 +49,7 @@ pipeline{
                 script{
                     dir('/Users/shwetakangane/.jenkins/workspace/KubernetesDemo/FirstDemoApp/demo'){
                         withCredentials([file(credentialsId: 'kubeconfig-secret', variable: 'KUBECONFIG')]) {
+                            sh 'kubectl delete svc firstdemoapp'
                             sh 'kubectl delete deployment firstdemoapp'
                             sh 'kubectl apply -f demo-service.yaml'
                         }
