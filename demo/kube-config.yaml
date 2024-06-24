@@ -8,7 +8,7 @@ clusters:
         provider: minikube.sigs.k8s.io
         version: v1.33.1
       name: cluster_info
-    server: https://127.0.0.1:56065
+    server: https://127.0.0.1:51757
   name: minikube
 contexts:
 - context:
